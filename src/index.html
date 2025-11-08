@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story App</title>
+
+    <link rel="icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <script type="module" src="./scripts/index.js" defer></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+    <header>
+      <div class="main-header container" role="banner">
+        <a class="brand-name" href="#/" aria-label="Halaman utama Story App"
+          >StoryApp</a
+        >
+
+        <nav
+          id="navigation-drawer"
+          class="navigation-drawer"
+          aria-label="Navigasi utama"
+          role="navigation"
+        >
+          <ul id="nav-list" class="nav-list">
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/map">Map</a></li>
+            <li><a href="#/add-story">Post Story</a></li>
+            <li><a href="#/saved-stories">Favorites</a></li>
+            <li><a href="#/login" id="login-link">Login</a></li>
+          </ul>
+        </nav>
+
+        <button
+          id="drawer-button"
+          class="drawer-button"
+          aria-label="Buka menu navigasi"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content" role="main">
+      <section id="app" aria-label="Konten Utama"></section>
+    </main>
+
+    <footer role="contentinfo" class="footer container">
+      <p>&copy;<strong>Muhammad Daffa Eka Pramudita</strong>.2025 StoryApp</p>
+      <p><a href="#/about" aria-label="Tentang Aplikasi">More Info</a></p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginLink = document.getElementById("login-link");
+        if (loginLink) {
+          const token = localStorage.getItem("token");
+          if (token) {
+            loginLink.textContent = "Logout";
+            loginLink.addEventListener("click", (e) => {
+              e.preventDefault();
+              localStorage.removeItem("token");
+              window.location.reload();
+            });
+          } else {
+            loginLink.textContent = "Login";
+            loginLink.addEventListener("click", (e) => {
+              e.preventDefault();
+              window.location.hash = "#/login";
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
