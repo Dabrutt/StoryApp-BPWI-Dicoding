@@ -1,2 +1,2 @@
-APP_URL=<url_aplikasi>
+APP_URL=<https://musical-chimera-8c5429.netlify.app/#/>
 MAP_SERVICE_API_KEY=<api_key>
