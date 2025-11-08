@@ -3,7 +3,7 @@ export default class LoginPage {
     return `
       <section class="container page-login">
         <div class="login-wrapper">
-          <h2 class="login-heading">Selamat Datang di StoryApp</h2>
+          <h1 class="login-heading">Selamat Datang di StoryApp</h1>
           
           <form id="loginForm" novalidate>
             <div class="form-item">

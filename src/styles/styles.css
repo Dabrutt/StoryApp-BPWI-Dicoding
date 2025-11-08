@@ -261,7 +261,8 @@ input[type="file"] {
 /* === NOTIFICATION CONTROLS === */
 .notification-controls {
   display: flex;
-  align-items: start;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 16px;
   padding: 16px;
   background: rgba(255, 255, 255, 0.1);
@@ -319,7 +320,6 @@ input[type="file"] {
 }
 
 .notification-status {
-  margin-left: 10px;
   font-size: 0.9rem;
   color: #4a5568;
   font-weight: 500;
@@ -586,6 +586,10 @@ input[type="file"] {
   margin-bottom: 1rem;
 }
 
+.empty-state p {
+  color: #374151;
+}
+
 .error-state {
   grid-column: 1 / -1;
   text-align: center;
@@ -663,7 +667,7 @@ input[type="file"] {
   overflow-y: auto;
   padding-right: 16px;
   scrollbar-width: thin;
-  scrollbar-color: #389169 #f1f1f1;
+  scrollbar-color: #2d6a4f #f1f1f1;
 }
 
 .story-list::-webkit-scrollbar {
@@ -688,6 +692,7 @@ input[type="file"] {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 .story-card:hover {
